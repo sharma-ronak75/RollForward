@@ -1,0 +1,115 @@
+'use strict';
+
+const SERVER = Object.freeze({
+    defaultPort: 3000,
+    sessionDurationDays: 14,
+    sessionSecretBytes: 32,
+    generatedAdminPasswordBytes: 9,
+    idBytes: 8,
+    referenceCodeBytes: 4,
+    passwordSaltBytes: 16,
+    passwordKeyBytes: 64,
+    maxRequestBodyBytes: 100 * 1024,
+    defaultCampaignGoalInr: 500_000,
+    minimumDonationInr: 100,
+    maximumDonationInr: 1_000_000,
+    percentageTotal: 100,
+    equipmentSharePercent: 90,
+    deliverySharePercent: 10,
+    dummyPasswordHashLength: 128,
+});
+
+const TIME = Object.freeze({
+    millisecondsPerSecond: 1_000,
+    secondsPerMinute: 60,
+    minutesPerHour: 60,
+    hoursPerDay: 24,
+    secondsPerDay: 86_400,
+    millisecondsPerDay: 86_400_000,
+    saveDebounceMs: 100,
+    rateLimitWindowMs: 60_000,
+    rateLimitBucketExpirationMs: 120_000,
+    rateLimitCleanupIntervalMs: 60_000,
+});
+
+const FIELD_LIMITS = Object.freeze({
+    defaultText: 200,
+    name: 100,
+    email: 160,
+    phone: 25,
+    streetAddress: 120,
+    city: 80,
+    region: 80,
+    postcode: 16,
+    country: 60,
+    searchQuery: 80,
+    aidOption: 20,
+    applicationState: 40,
+    contact: 160,
+    disability: 40,
+    aidName: 40,
+    applicationStory: 1_000,
+    reference: 30,
+    dedication: 120,
+    message: 300,
+    referrer: 160,
+    volunteerRole: 60,
+    organisation: 120,
+    itemType: 60,
+    itemDescription: 200,
+    itemCondition: 20,
+    notes: 300,
+    status: 30,
+    publicStory: 400,
+    adminUpdate: 300,
+    shiftTitle: 100,
+    shiftDate: 10,
+    shiftTime: 40,
+    shiftLocation: 100,
+});
+
+const VALIDATION = Object.freeze({
+    minimumPasswordLength: 8,
+    maximumPasswordLength: 200,
+    minimumApplicantAge: 1,
+    maximumApplicantAge: 110,
+    minimumDonationQuantity: 1,
+    maximumDonationQuantity: 50,
+    maximumItemsPerPledge: 10,
+    minimumPledgeItemQuantity: 1,
+    maximumPledgeItemQuantity: 500,
+    minimumApplicationStoryLength: 40,
+    minimumPublicStoryLength: 20,
+    minimumBeneficiaryUpdateLength: 5,
+    minimumShiftCapacity: 1,
+    maximumShiftCapacity: 200,
+    minimumPhoneDigits: 7,
+});
+
+const RATE_LIMITS = Object.freeze({
+    donationWrite: 20,
+    applicationWrite: 10,
+    applicationTracking: 10,
+    volunteerSignup: 10,
+    accountSignup: 8,
+    accountLogin: 10,
+    passwordChange: 8,
+    accountDelete: 5,
+    inKindWrite: 10,
+    inKindTracking: 10,
+});
+
+const DISPLAY_LIMITS = Object.freeze({
+    deliveredBeneficiaries: 6,
+    supporters: 8,
+    adminDonationChartDays: 14,
+});
+
+module.exports = {
+    SERVER,
+    TIME,
+    FIELD_LIMITS,
+    VALIDATION,
+    RATE_LIMITS,
+    DISPLAY_LIMITS,
+};
