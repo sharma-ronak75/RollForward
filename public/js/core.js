@@ -185,7 +185,7 @@ const statusTag = s => {
 
 function personCard(b) {
     const action = b.status === 'Seeking funds'
-        ? `<a class="btn btn-sm" href="#/items/${b.id}">Fund ${esc(first(b.name))}'s ${esc(b.aid.toLowerCase())}</a>`
+        ? `<a class="btn btn-sm" href="#/items/${b.id}">Fund</a>`
         : statusTag(b.status);
     return `<article class="card person">
     <div class="head">${avatar(b)}<div class="grow"><h3><a href="#/b/${b.id}">${esc(b.name)}</a></h3>
