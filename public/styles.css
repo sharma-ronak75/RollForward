@@ -203,16 +203,10 @@ fieldset.addr { border: 2px solid var(--line); border-radius: 14px; padding: .25
 fieldset.addr legend { font-weight: 700; padding: 0 .4rem; }
 .item-row { border-top-width: 2px; }
 
-/* =====================================================================
-   Beneficiary card details
-   ===================================================================== */
 .age { font-weight: 700; color: var(--mute); font-size: .92rem; margin-top: .1rem; }
 .meta { margin: 0; color: var(--mute); font-size: .95rem; }
 [hidden] { display: none !important; }
 
-/* =====================================================================
-   Donation page: donation toggle, amount field, quick chips
-   ===================================================================== */
 .seg { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: var(--surf2); border: 2px solid var(--line); margin: .25rem 0 1rem; isolation: isolate; }
 .seg button { position: relative; overflow: hidden; z-index: 1; min-height: 42px; border: 0; background: transparent; border-radius: 999px; cursor: pointer; font-weight: 700; color: var(--mute); transition: color .25s; }
 .seg button[aria-selected="true"] { color: var(--onbrand); }
