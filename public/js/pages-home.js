@@ -23,7 +23,7 @@ async function viewHome() {
       <div class="card step flat"><h3>We deliver</h3><p class="muted">Once an aid is fully funded it is bought, assembled and delivered through a partner clinic.</p></div>
       <div class="card step flat"><h3>You see the result</h3><p class="muted">When an aid is delivered you get a dated update on your account, with the beneficiary's progress.</p></div>
     </div>
-    <div class="band" style="margin-top:2.5rem"><div><h2 style="margin:0">Just ₹100 starts someone's journey</h2><p style="margin:.25rem 0 0">Every donation counts. Donate now!</p></div><div class="row"><a class="btn btn-accent" href="#/items/amount/100">Donate ₹100</a><a class="btn btn-light" href="#/items">Donate Us</a></div></div>
+    <div class="band" style="margin-top:2.5rem"><div><h2 style="margin:0">Just ₹100 can change someones's life</h2><p style="margin:.25rem 0 0">Every donation counts. Donate now!</p></div><div class="row"><a class="btn btn-accent" href="#/items/amount/100">Donate ₹100</a><a class="btn btn-light" href="#/items">Donate Us</a></div></div>
   </div>`;
 }
 

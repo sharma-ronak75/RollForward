@@ -4,7 +4,7 @@ function receiptHtml(r, { embedded = false } = {}) {
     <p class="muted small">${fmtDate(r.createdAt)} · ${esc(r.name)} · ${esc(r.email)}${r.phone ? ' · ' + esc(r.phone) : ''}${r.billing ? `<br>Billing address: ${esc(addressLine(r.billing))}` : ''}</p>
     <table class="data"><thead><tr><th>Item</th><th>Qty</th><th>Amount</th></tr></thead><tbody>
       <tr><td>${esc(r.item)}</td><td>${r.quantity || '—'}</td><td>${money(r.amount)}</td></tr></tbody></table>
-    <h4 style="margin:1rem 0 .25rem">Where it went</h4>
+    <h4 style="margin:1rem 0 .25rem">Track</h4>
     <ul style="margin:0;padding-left:1.2rem">${r.allocations.map(a => {
         return `<li>${money(a.amount)} → ${a.beneficiaryId ? `<a href="#/b/${a.beneficiaryId}">${esc(a.to)}</a>` : esc(a.to)}</li>`;
     }).join('')}</ul>

@@ -213,8 +213,11 @@ function closeModal() {
     if (!modalState || !modalState.ready) {
         return;
     }
-    const { root, prev, onClose, resolve } = modalState;
+    const { root, prev, onClose, resolve, pay } = modalState;
     modalState = null;
+    if (pay) {
+        pay.resolve(false);
+    }
     cancelAnimationFrame(confettiRaf);
     root.classList.add('closing');
     setTimeout(() => {
@@ -225,10 +228,43 @@ function closeModal() {
     if (prev && prev.focus) {
         prev.focus({ preventScroll: true });
     }
-    if (onClose) {
+    if (onClose && !pay) {
         setTimeout(onClose, UI_TIMINGS.modalCloseCallbackMs);
     }
     resolve();
+}
+function upiLink({ amount, ref }) {
+    const params = [
+        `pa=${encodeURIComponent(PAYMENT.upiId).replace(/%40/g, '@')}`,
+        `pn=${encodeURIComponent(PAYMENT.payeeName)}`,
+        `am=${Number(amount).toFixed(2)}`,
+        'cu=INR',
+        `tn=${encodeURIComponent(`${PAYMENT.payeeName} ${ref}`)}`,
+    ];
+    return `upi://pay?${params.join('&')}`;
+}
+// Shows a scannable payment QR and resolves true once payment is confirmed,
+// or false if the person closes the popup first.
+function awaitPayment(body, box, payment) {
+    body.innerHTML = `<div class="m-stage m-pay">
+    <h2 id="m-title">Scan to pay</h2>
+    <div class="m-big">${num(payment.amount, true)}</div>
+    <div class="m-qr">${qrSvg(upiLink(payment), { label: `UPI payment QR code for ${money(payment.amount)}` })}</div>
+    <p class="muted m-pay-note">Pay using UPI</p>
+    <div class="m-ref">Reference <b>${esc(payment.ref)}</b></div>
+    <div class="row" style="justify-content:center"><button class="btn btn-ghost" data-act="close-modal">Cancel</button></div></div>`;
+    countUp(body);
+    box.focus({ preventScroll: true });
+    return new Promise(resolve => {
+        modalState.ready = true;
+        modalState.pay = { resolve };
+    });
+}
+function confirmPayment() {
+    const { pay } = modalState;
+    modalState.pay = null;
+    modalState.ready = false;
+    pay.resolve(true);
 }
 async function celebrate(cfg) {
     const root = $('#modal-root');
@@ -251,6 +287,15 @@ async function celebrate(cfg) {
             ready: false
         };
     });
+    if (cfg.payment) {
+        const paid = await awaitPayment(body, box, cfg.payment);
+        if (!paid) {
+            return done;
+        }
+        if (cfg.onPaid) {
+            cfg.onPaid();
+        }
+    }
     body.innerHTML = `<div class="m-stage" role="status"><div class="m-spin" aria-hidden="true"><i></i><i></i><i></i><svg viewBox="0 0 40 40"><rect x="10" y="18" width="20" height="14" rx="3"/><path d="M14 18v-4a6 6 0 0 1 12 0v4"/></svg></div>
     <h2 id="m-title">${esc(cfg.processing.title)}</h2><p class="muted">${esc(cfg.processing.note)}</p>
     <ul class="m-steps">${cfg.processing.steps.map(step).join('')}</ul></div>`;
@@ -295,6 +340,14 @@ document.addEventListener('keydown', e => {
     }
     if (e.key === 'Escape') {
         closeModal();
+        return;
+    }
+    if (modalState.pay && PAYMENT.simulateWithSpace && (e.key === ' ' || e.code === 'Space')) {
+        e.preventDefault();
+        if (!e.repeat) {
+            confirmPayment();
+        }
+        return;
     }
     if (e.key === 'Tab') {
         const f = $$('button, a[href]', $('.modal', modalState.root));

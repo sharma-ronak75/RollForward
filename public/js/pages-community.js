@@ -157,3 +157,44 @@ function viewFaq() {
 
 let accountMode = 'in';
 let accountTab = 'giving';
+
+
+function viewReadme() {
+    const steps = [
+        ['Browse', 'Meet verified beneficiaries in the <a href="#/directory">directory</a>. Each is listed by first name, age and state only.'],
+        ['Give', 'Fund a specific person\'s aid, or <a href="#/items">donate money or items</a>. Gifts start at ₹100.'],
+        ['Deliver', 'Volunteers hand over the aid and a coordinator posts a dated update.'],
+        ['Follow', 'See every update under “My account”, and the campaign totals on the <a href="#/impact">Impact</a> page.'],
+    ];
+    main.innerHTML = `<div class="page" style="max-width:820px"><h1 style="font-size:2rem">Info</h1>
+    <p class="lead">Roll Forward is a mobility aid donation drive. It funds wheelchairs, tricycles, crutches, artificial limbs and white canes for verified low-income people with disabilities.</p>
+    <h2>How it works</h2>
+    <ol class="stack" style="padding-left:1.2rem">${steps.map(([t, d]) => {
+        return `<li><strong>${t}.</strong> ${d}</li>`;
+    }).join('')}</ol>
+    <h2>Who it is for</h2>
+    <p>Low-income people with a disability, including amputees and people with paralysis, blindness or cerebral palsy, who are referred by a clinic or NGO. Every beneficiary is vetted before being listed.</p>
+    <h2>Ways to take part</h2>
+    <ul style="padding-left:1.2rem"><li><a href="#/items">Donate money or items</a></li><li><a href="#/apply">Apply for an aid</a></li><li><a href="#/volunteer">Volunteer a shift</a></li><li><a href="#/faq">Read the FAQ</a></li></ul>
+    <h2>Using this site</h2>
+    <p>Use <strong>A-</strong> and <strong>A+</strong> to change text size, <strong>Theme</strong> for light or dark, and <strong>Contrast</strong> for high contrast. The whole site works with a keyboard.</p>
+    <p class="small muted">Built with Node.js and no dependencies. Run it with <code>npm start</code> and test it with <code>npm test</code>.</p></div>`;
+}
+
+function viewMore() {
+    const links = [
+        ['#/readme', 'Read me', 'What Roll Forward is and how it works.'],
+        ['#/faq', 'FAQ', 'Answers on eligibility, giving, privacy and delivery.'],
+        ['#/impact', 'Impact', 'Totals raised, aids funded and delivery stories.'],
+        ['#/volunteer', 'Volunteer', 'Claim a shift or register your interest.'],
+        ['#/apply', 'Apply', 'Start an application for a mobility aid.'],
+        ['#/items', 'Donate Us', 'Give money or pledge useful items.'],
+        ['#/directory', 'Beneficiaries', 'Meet the people waiting for an aid.'],
+        ['#/account', 'My account', 'Your gifts, pledges and updates.'],
+    ];
+    main.innerHTML = `<div class="page"><h1 style="font-size:2rem">More</h1>
+    <p class="muted">Everything else on Roll Forward in one place.</p>
+    <div class="grid">${links.map(([href, t, d]) => {
+        return `<a class="card" href="${href}" style="text-decoration:none;color:inherit"><h3 style="margin-top:0">${t}</h3><p class="muted" style="margin-bottom:0">${d}</p></a>`;
+    }).join('')}</div></div>`;
+}

@@ -39,6 +39,8 @@ const ROUTES = [
     [/^\/impact$/, viewImpact],
     [/^\/volunteer$/, viewVolunteer],
     [/^\/faq$/, viewFaq],
+    [/^\/readme$/, viewReadme],
+    [/^\/more$/, viewMore],
     [/^\/account$/, viewAccount],
     [/^\/admin$/, viewAdmin],
 ];

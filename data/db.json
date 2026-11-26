@@ -26,7 +26,7 @@
       "story": "A bus conductor who lost his lower leg. An artificial limb would let him return to full-time work.",
       "delivered": false,
       "updates": [],
-      "createdAt": "2026-11-25T12:37:29.925Z"
+      "createdAt": "2026-11-26T06:32:53.814Z"
     },
     {
       "id": 2,
@@ -35,12 +35,12 @@
       "disability": "Cerebral palsy",
       "aid": "Wheelchair",
       "cost": 7125,
-      "raised": 100,
+      "raised": 500,
       "state": "Bihar",
       "story": "Meena needs a supportive chair so she can sit with classmates and keep up with lessons.",
       "delivered": false,
       "updates": [],
-      "createdAt": "2026-11-25T12:37:29.925Z"
+      "createdAt": "2026-11-26T06:32:53.814Z"
     },
     {
       "id": 3,
@@ -49,12 +49,12 @@
       "disability": "Paralysis",
       "aid": "Tricycle",
       "cost": 22800,
-      "raised": 1500,
+      "raised": 0,
       "state": "Uttar Pradesh",
       "story": "Mohan repairs phones but cannot get to customers. A tricycle would triple his daily reach.",
       "delivered": false,
       "updates": [],
-      "createdAt": "2026-11-25T12:37:29.925Z"
+      "createdAt": "2026-11-26T06:32:53.814Z"
     },
     {
       "id": 4,
@@ -68,7 +68,7 @@
       "story": "A seamstress who stopped working after a fall. A wheelchair would let her return to her workshop.",
       "delivered": false,
       "updates": [],
-      "createdAt": "2026-11-25T12:37:29.925Z"
+      "createdAt": "2026-11-26T06:32:53.814Z"
     },
     {
       "id": 5,
@@ -77,50 +77,22 @@
       "disability": "Blindness",
       "aid": "White Cane",
       "cost": 500,
-      "raised": 0,
+      "raised": 500,
       "state": "Odisha",
       "story": "Lakshmi weaves baskets and sells them at the market. A cane would help her travel there safely on her own.",
       "delivered": false,
       "updates": [],
-      "createdAt": "2026-11-25T12:37:29.925Z"
+      "createdAt": "2026-11-26T06:32:53.814Z"
     }
   ],
   "nextBeneficiaryId": 6,
   "donations": [
     {
-      "id": "RF-CE025B78",
-      "userId": "efd5a883cc57c542",
-      "name": "nigger",
-      "email": "hello@test.com",
-      "phone": "91919191919",
-      "billing": {
-        "line1": "aaaaaaaaa",
-        "line2": "aaaaaaaaa",
-        "city": "New Delhi",
-        "state": "aaaaaaaaa",
-        "postcode": "aaaaaaaaa",
-        "country": "aaaaaaaaa"
-      },
-      "option": "cane",
-      "quantity": 3,
-      "amount": 1500,
-      "anonymous": false,
-      "dedication": "Very cool text",
-      "message": "",
-      "createdAt": "2026-11-25T14:21:00.259Z",
-      "allocations": [
-        {
-          "beneficiaryId": 3,
-          "amount": 1500
-        }
-      ]
-    },
-    {
-      "id": "RF-0A4B443C",
-      "userId": "efd5a883cc57c542",
+      "id": "RF-1349B3FE",
+      "userId": null,
       "name": "hello",
       "email": "hello@test.com",
-      "phone": "91919191919",
+      "phone": "91919191",
       "billing": {
         "line1": "aaaaaaaaa",
         "line2": "aaaaaaaaa",
@@ -131,83 +103,33 @@
       },
       "option": "general",
       "quantity": 0,
-      "amount": 100,
+      "amount": 1000,
       "anonymous": true,
       "dedication": "",
       "message": "",
-      "createdAt": "2026-11-25T14:38:13.823Z",
+      "createdAt": "2026-11-26T06:37:05.967Z",
       "allocations": [
         {
-          "beneficiaryId": 2,
-          "amount": 100
-        }
-      ]
-    }
-  ],
-  "applications": [
-    {
-      "ref": "AP-083D5C71",
-      "userId": "efd5a883cc57c542",
-      "name": "hello",
-      "age": 24,
-      "state": "Bihar",
-      "contact": "hello@test.com",
-      "disability": "Amputee",
-      "aid": "Wheelchair",
-      "referrer": "sadasdadasda",
-      "story": "sadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasdasadasda",
-      "status": "Received",
-      "beneficiaryId": null,
-      "createdAt": "2026-11-25T14:25:27.528Z",
-      "history": [
+          "beneficiaryId": 5,
+          "amount": 500
+        },
         {
-          "status": "Received",
-          "note": "Application received.",
-          "at": "2026-11-25T14:25:27.528Z"
+          "beneficiaryId": 2,
+          "amount": 500
         }
       ]
     }
   ],
-  "volunteers": [
-    {
-      "id": "128ac7413af143a2",
-      "userId": "efd5a883cc57c542",
-      "name": "hello",
-      "email": "hello@test.com",
-      "role": "Delivery and logistics",
-      "times": [
-        "Weekdays"
-      ],
-      "createdAt": "2026-11-25T14:28:40.423Z"
-    },
-    {
-      "id": "8eb950cb9ce4cdc0",
-      "userId": "efd5a883cc57c542",
-      "name": "hello",
-      "email": "hello@test.com",
-      "role": "Delivery and logistics",
-      "times": [
-        "Weekends"
-      ],
-      "createdAt": "2026-11-25T14:29:39.935Z"
-    }
-  ],
+  "applications": [],
+  "volunteers": [],
   "users": [
     {
-      "id": "e2abf64badfd1b3a",
+      "id": "f59a9f3e156e1ada",
       "name": "Programme Admin",
       "email": "admin@rollforward.local",
       "role": "admin",
-      "passwordHash": "afca0503f4f56e16f79430d87fd3fa82:8561360b9709c1dbea5664172e909b2e14d248a496148796a6f8132eca1629b8291d78a46448ce4536efa7c0889e45ba61ed69b123221aea679554f3b2029e5c",
-      "createdAt": "2026-11-25T07:43:41.021Z"
-    },
-    {
-      "id": "efd5a883cc57c542",
-      "name": "hello",
-      "email": "hello@test.com",
-      "role": "donor",
-      "passwordHash": "0da608168598d1377ed91356a9d41f3f:be9b5e1696414654b1eea6a386713f5d279fee5ed1cf699d9becfc9fa3e1f1dd23bf5c4a00a2c38b9efaf7eebba5903fb4c447a101321f4ad791dfca7a5b986c",
-      "createdAt": "2026-11-25T14:06:57.850Z"
+      "passwordHash": "5cc69313d81c58441eeddedc93531e27:6937d7b58b5ee6b34c03821764367bf6a073f0f498771952378dbb05b51a153331fc37722144ee4e0237e4f7a3f2fc847dcea94e5d107987c9cd7803a9bd219a",
+      "createdAt": "2026-11-26T06:32:53.923Z"
     }
   ],
   "shifts": [
@@ -215,8 +137,8 @@
       "id": "s1",
       "title": "Wheelchair assembly day",
       "role": "Delivery and logistics",
-      "date": "2026-11-30",
-      "time": "09:00–13:00",
+      "date": "2026-12-01",
+      "time": "09:00-13:00",
       "location": "Central warehouse",
       "capacity": 8,
       "signups": []
@@ -225,8 +147,8 @@
       "id": "s2",
       "title": "Distribution camp",
       "role": "Event support",
-      "date": "2026-12-04",
-      "time": "10:00–15:00",
+      "date": "2026-12-05",
+      "time": "10:00-15:00",
       "location": "Community centre",
       "capacity": 6,
       "signups": []
@@ -235,8 +157,8 @@
       "id": "s3",
       "title": "Awareness walk",
       "role": "Awareness and outreach",
-      "date": "2026-12-07",
-      "time": "08:30–12:30",
+      "date": "2026-12-08",
+      "time": "08:30-12:30",
       "location": "City park",
       "capacity": 10,
       "signups": []
@@ -245,12 +167,50 @@
       "id": "s4",
       "title": "Community fundraising drive",
       "role": "Fundraising",
-      "date": "2026-12-11",
-      "time": "11:00–16:00",
+      "date": "2026-12-12",
+      "time": "11:00-16:00",
       "location": "Online and local markets",
       "capacity": 10,
       "signups": []
     }
   ],
-  "inKind": []
+  "inKind": [
+    {
+      "ref": "IK-CB00327F",
+      "userId": null,
+      "name": "nigganigga",
+      "email": "myemail@email.com",
+      "organisation": "",
+      "phone": "91919191",
+      "address": {
+        "line1": "aaaaaaaaa",
+        "line2": "aaaaaaaaa",
+        "city": "New Delhi",
+        "state": "aaaaaaaaa",
+        "postcode": "aaaaaaaaa",
+        "country": "aaaaaaaaa"
+      },
+      "items": [
+        {
+          "type": "Wheelchair cushion",
+          "description": "123",
+          "quantity": 1,
+          "condition": "Good"
+        }
+      ],
+      "method": "Courier",
+      "notes": "",
+      "anonymous": true,
+      "status": "Pledged",
+      "pickupDate": "",
+      "createdAt": "2026-11-26T06:36:14.806Z",
+      "history": [
+        {
+          "status": "Pledged",
+          "note": "Pledge received. A coordinator will contact you to arrange hand-over.",
+          "at": "2026-11-26T06:36:14.806Z"
+        }
+      ]
+    }
+  ]
 }

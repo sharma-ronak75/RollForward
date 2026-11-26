@@ -189,6 +189,8 @@ details.faq summary { cursor: pointer; font-weight: 700; }
 .toast.bad { background: var(--err); color: #fff; }
 @keyframes pop { from { transform: translateY(10px); opacity: 0; } }
 .footer { border-top: 2px solid var(--line); padding: 1.5rem 0 2rem; color: var(--mute); font-size: .88rem; }
+.footer-links { display: flex; gap: 1.25rem; margin-top: .75rem; font-weight: 700; }
+.footer-links a { color: var(--brand); }
 .loading { padding: 3rem; text-align: center; color: var(--mute); }
 
 @media print {
@@ -346,6 +348,17 @@ body.modal-open { overflow: hidden; }
 .m-ref { margin: 0 0 1rem; font-size: .9rem; color: var(--mute); animation: fade .5s 1.2s backwards; }
 .m-ref b { display: inline-block; margin-left: .4rem; padding: .1rem .7rem; border-radius: 999px; border: 2px dashed var(--brand); color: var(--brand); letter-spacing: .04em; }
 .m-done h2, .m-done p { animation: rise .5s .5s cubic-bezier(.2, .8, .2, 1) backwards; }
+
+/* payment QR step */
+.m-pay .m-big { font-size: 2.2rem; }
+.m-qr { width: min(66vw, 240px); margin: .7rem auto .6rem; padding: .5rem; background: #fff; border-radius: 16px; box-shadow: 0 6px 22px rgba(0, 0, 0, .22); animation: bigPop .6s .1s cubic-bezier(.34, 1.56, .64, 1) backwards; }
+.m-qr svg { display: block; width: 100%; height: auto; border-radius: 8px; }
+.m-pay-note { margin: 0 0 .6rem; font-size: .92rem; }
+.m-waiting { display: flex; align-items: center; justify-content: center; gap: .5rem; margin: 0 0 .7rem; font-weight: 700; font-size: .95rem; color: var(--brand); }
+.m-waiting i { width: .65rem; height: .65rem; border-radius: 50%; background: var(--accent); animation: waitPulse 1.2s ease-in-out infinite; }
+@keyframes waitPulse { 50% { transform: scale(1.6); opacity: .35; } }
+.m-dev { margin: 0 0 .8rem; }
+.m-dev kbd { padding: .05rem .45rem; border: 1px solid var(--mute); border-radius: 6px; font: inherit; font-weight: 700; }
 
 /* respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {

@@ -53,3 +53,12 @@ const EFFECTS = Object.freeze({
     confettiWobbleSpeed: 0.08,
     confettiWobbleDistance: 0.6,
 });
+
+// Payment QR settings. Replace upiId with the real UPI ID (VPA) that receives donations.
+const PAYMENT = Object.freeze({
+    upiId: 'rollforward@upi',
+    payeeName: 'Roll Forward',
+    // Placeholder verification: pressing Space marks the payment as received.
+    // Remove this once real payment verification is wired in.
+    simulateWithSpace: true,
+});

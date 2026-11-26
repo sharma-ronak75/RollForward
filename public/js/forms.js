@@ -1,8 +1,11 @@
 const forms = {
     async donate(form, v) {
         const r = await api('/donations', { method: 'POST', body: v });
-        $('#receipt').innerHTML = receiptHtml(r, { embedded: true });
         await celebrate({
+            payment: { amount: r.amount, ref: r.id },
+            onPaid: () => {
+                $('#receipt').innerHTML = receiptHtml(r, { embedded: true });
+            },
             processing: { title: 'Recording your donation…', note: 'Please do not close this window', steps: ['Validating', 'Allocating', 'Saving'] },
             title: `Thank you, ${first(r.name)}!`,
             big: r.amount,
